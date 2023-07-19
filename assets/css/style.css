@@ -142,7 +142,9 @@ html { font-family: var(--ff-poppins); }
 
 body { background: var(--smoky-black); }
 
-
+ion-icon{
+  pointer-events: none;
+}
 
 
 
@@ -509,6 +511,56 @@ main {
 }
 
 .about-text p { margin-bottom: 15px; }
+
+.about-text .social-link {
+  color: var(--light-gray-70);
+  font-size: 15px;
+}
+
+.res-btn {
+  position: relative;
+  width: 100%;
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  border-radius: 14px;
+  font-size: var(--fs-6);
+  text-transform: capitalize;
+  box-shadow: var(--shadow-3);
+  z-index: 1;
+  transition: var(--transition-1);
+  
+}
+
+
+.res-btn::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+  transition: var(--transition-1);
+}
+
+.res-btn ion-icon { font-size: 16px; }
+
+.res-btn:hover { background: var(--bg-gradient-yellow-1); }
+
+.res-btn:hover::before { background: var(--bg-gradient-yellow-2); }
+
+.res-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.res-btn:disabled:hover { background: var(--border-gradient-onyx); }
+
+.res-btn:disabled:hover::before { background: var(--bg-gradient-jet); }
 
 
 
@@ -895,6 +947,11 @@ textarea.form-input::-webkit-resizer { display: none; }
   #RESPONSIVE
 \*-----------------------------------*/
 
+@media (min-width: 0px) {
+  .div-lottie { display: none;}
+}
+
+
 /**
  * responsive larger than 450px screen
  */
@@ -906,7 +963,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    * #PORTFOLIO, BLOG 
    */
 
-  .div-lottie { display: none;}
+
 
   .project-img,
 
@@ -1135,7 +1192,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .has-scrollbar::-webkit-scrollbar-button { width: 100px; }
 
-  .div-lottie { display: flex;}
 
 
   /**
@@ -1294,6 +1350,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .navbar-link { font-weight: var(--fw-500); }
 
+  .div-lottie { display: flex;}
 
 
   /**
